@@ -56,7 +56,7 @@ volumes:
     name: vol-pgadmin_data
 ```
 
-- Answer: **postgres:5433**
+- postgres:5433
 - localhost:5432
 - Answer: **db:5433**
 - postgres:5432
