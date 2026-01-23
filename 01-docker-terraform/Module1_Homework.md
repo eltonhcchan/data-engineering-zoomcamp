@@ -11,8 +11,9 @@ What's the version of `pip` in the image?
 - 24.2.1
 - 23.3.1
 
-Solution: 25.3
+Answer: 25.3
 
+Solution:
 ```yaml
 docker run -it —rm python:3.13 bash
 pip --version
@@ -55,9 +56,9 @@ volumes:
     name: vol-pgadmin_data
 ```
 
-- **postgres:5433**
+- Answer: **postgres:5433**
 - localhost:5432
-- **db:5433**
+- Answer: **db:5433**
 - postgres:5432
 - db:5432
 
@@ -82,11 +83,11 @@ wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_z
 For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2025-12-01', exclusive of the upper bound), how many trips had a `trip_distance` of less than or equal to 1 mile?
 
 - 7,853
-- **8,007**
+- Answer **8,007**
 - 8,254
 - 8,421
 
-Answer: 
+Solution: 
 
 ```yaml
 SELECT count(*) FROM public.green_trip_data
@@ -100,12 +101,12 @@ Which was the pick up day with the longest trip distance? Only consider trips wi
 
 Use the pick up time for your calculations.
 
-- **2025-11-14**
+- Answer **2025-11-14**
 - 2025-11-20
 - 2025-11-23
 - 2025-11-25
 
-Answer: 
+Solution: 
 
 ```sql
 select lpep_pickup_datetime from public.green_trip_data
@@ -117,11 +118,12 @@ from public.green_trip_data where trip_distance<100)
 
 Which was the pickup zone with the largest `total_amount` (sum of all trips) on November 18th, 2025?
 
-- **East Harlem North**
+- Answer **East Harlem North**
 - East Harlem South
 - Morningside Heights
 - Forest Hills
 
+Solution
 ```sql
 SELECT
 distinct(zpu."Zone") as a, sum(t.total_amount) as b
@@ -142,10 +144,11 @@ For the passengers picked up in the zone named "East Harlem North" in November 2
 Note: it's `tip` , not `trip`. We need the name of the zone, not the ID.
 
 - JFK Airport
-- **Yorkville West  81.89**
+- Answer **Yorkville West  81.89**
 - East Harlem North
 - LaGuardia Airport
 
+Solution
 ```sql
 select tip_amount, b."Zone" 
 from green_trip_data a, taxi_zone_lookup b
@@ -179,5 +182,5 @@ Answers:
 - terraform import, terraform apply -y, terraform destroy
 - teraform init, terraform plan -auto-apply, terraform rm
 - terraform init, terraform run -auto-approve, terraform destroy
-- **terraform init, terraform apply -auto-approve, terraform destroy**
+- Answer **terraform init, terraform apply -auto-approve, terraform destroy**
 - terraform import, terraform apply -y, terraform rm
